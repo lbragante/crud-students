@@ -1,0 +1,22 @@
+.table {
+    border-spacing: 0 .8rem !important;
+    border-collapse: separate;
+
+    tbody {
+        tr {
+            box-shadow: 4px 4px 20px 0 rgba(120, 135, 182, .1);
+
+            td {
+                background: #fff;
+
+                &:nth-child(1) {
+                    border-radius: 0.50rem 0 0 0.50rem;
+                }
+
+                &:nth-last-child(1) {
+                    border-radius: 0 0.50rem 0.50rem 0;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,8 @@
+<app-loading *ngIf="loading$ | async"></app-loading>
+
+<app-navbar></app-navbar>
+<div class="container">
+    <main role="main">
+        <router-outlet></router-outlet>
+    </main>
+</div>

@@ -1,0 +1,8 @@
+/* You can add global styles to this file, and also import other style files */
+@import './sass/colors';
+@import './sass/typography';
+@import './sass/forms';
+@import './sass/global';
+
+@import '../node_modules/bootstrap/scss/bootstrap';
+@import 'ngx-toastr/toastr-bs5-alert';

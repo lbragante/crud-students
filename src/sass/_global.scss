@@ -1,0 +1,29 @@
+body {
+    -webkit-font-smoothing: antialiased !important;
+    background-color: $light !important;
+    color: $dark !important;
+    font-size: $font-size-base;
+    font-family: 'Sora', sans-serif !important;
+    font-weight: normal;
+    font-style: normal;
+}
+
+body,
+html {
+    height: 100%;
+}
+
+::-moz-selection {
+    color: $dark;
+    background: $secondary;
+}
+  
+::selection {
+    color: $dark;
+    background: $secondary;
+}
+
+$border-radius: .25rem !default;
+$border-radius-lg: .250rem !default;
+$border-radius-sm: .20rem !default;
+$border-width: .12em;

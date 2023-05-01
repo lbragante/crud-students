@@ -1,0 +1,31 @@
+<div class="students">
+    <div class="row">
+        <div class="col-12">
+            <div class="header d-flex justify-content-between">
+                <h1 class="text-primary">Alunos</h1>
+                <button class="btn btn-primary btn-block shadow-none align-self-center" (click)="openPanel()">
+                    <i class="bi bi-person-fill-add me-2"></i>Adicionar</button>
+            </div>
+
+            <form [formGroup]="formSearchStudent">
+                <div class="col-md-4 mt-5 mb-2">
+                    <div class="form-group">
+                        <label for="searchName"><i class="bi bi-search me-2"></i>Busca</label>
+                        <input type="text" class="form-control shadow-none" formControlName="searchName" (input)="filterData()"
+                        id="searchName" placeholder="Buscar pelo nome do aluno">
+                    </div>
+                </div>
+            </form>
+
+            <div *ngIf="noSearchResults" class="alert alert-secondary mt-5" role="alert">
+                Nenhum aluno encontrado com o nome pesquisado.
+            </div>
+
+            <section *ngIf="!noSearchResults" class="mt-4">
+                <app-table [data]="data" [columns]="columns"></app-table>
+            </section>
+        </div>
+    </div>
+</div>
+
+<app-panel-form-student (updateStudentsList)="updateStudentsList($event)"></app-panel-form-student>

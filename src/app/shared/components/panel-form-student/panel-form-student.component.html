@@ -1,0 +1,69 @@
+<div class="floating-panel" [ngStyle]="{ 'right': isOpen ? '0' : '-800px' }">
+    <div class="header">
+        <h2>{{ title }}</h2>
+        <button class="close-button" (click)="close()">X</button>
+    </div>
+    <div class="content">
+        <form [formGroup]="formStudent">
+            <div class="row mt-2">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input type="text" class="form-control shadow-none" formControlName="nome" id="nome"
+                            placeholder="Primeiro nome">
+                        <span class="validation-text"
+                            *ngIf="!formStudent.controls['nome'].valid && formStudent.controls['nome']?.touched">Campo
+                            obrigatório</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="sobrenome">Sobrenome</label>
+                        <input type="text" class="form-control shadow-none" formControlName="sobrenome" id="sobrenome"
+                            placeholder="Sobrenome">
+                        <span class="validation-text"
+                            *ngIf="!formStudent.controls['sobrenome'].valid && formStudent.controls['sobrenome']?.touched">Campo
+                            obrigatório</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="idade">Idade</label>
+                        <input type="number" class="form-control shadow-none" formControlName="idade" id="idade"
+                            placeholder="Idade">
+                        <span class="validation-text"
+                            *ngIf="!formStudent.controls['idade'].valid && formStudent.controls['idade']?.touched">Campo
+                            obrigatório</span>
+
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="sexo">Sexo</label>
+                        <select class="form-select shadow-none" formControlName="sexo" id="sexo">
+                            <option [value]="'F'">Feminino</option>
+                            <option [value]="'M'">Masculino</option>
+                        </select>
+                        <span class="validation-text"
+                            *ngIf="!formStudent.controls['sexo'].valid && formStudent.controls['sexo']?.touched">Campo
+                            obrigatório</span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group mt-4">
+                <button *ngIf="!isEdit; else edit" type="submit" class="btn btn-primary btn-block w-100 shadow-none"
+                    [disabled]="!formStudent.valid" (click)="createStudent()">Salvar aluno</button>
+
+                <ng-template #edit>
+                    <button type="submit" class="btn btn-primary btn-block w-100 shadow-none" [disabled]="!formStudent.valid"
+                        (click)="editStudent()">Editar aluno</button>
+                </ng-template>
+            </div>
+        </form>
+    </div>
+</div>

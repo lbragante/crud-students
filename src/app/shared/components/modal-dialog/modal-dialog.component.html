@@ -1,0 +1,14 @@
+<div class="modal-header">
+  <h4 class="modal-title">Confirmação de exclusão</h4>
+  <button type="button" class="btn-close shadow-none" aria-label="Close" (click)="bsModalRef.hide()">
+  </button>
+</div>
+<div class="modal-body">
+  <span>
+    Tem certeza que deseja excluir o aluno <strong>{{ name }}</strong>?
+  </span>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-light shadow-none" (click)="bsModalRef.hide()">Cancelar</button>
+  <button type="button" class="btn btn-primary shadow-none" (click)="deleteStudent(id)">Excluir</button>
+</div>

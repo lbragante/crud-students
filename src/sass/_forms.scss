@@ -1,0 +1,37 @@
+@import '../sass/colors';
+
+$input-btn-padding-y: .75rem !default;
+$input-btn-padding-x: .95rem !default;
+$input-border-color: darken($light, 10%) !default;
+
+::placeholder {
+  color: darken($light, 10%) !important;
+  opacity: 1 !important;
+}
+
+:-ms-input-placeholder {
+  color: darken($light, 10%) !important;
+}
+
+::-ms-input-placeholder {
+  color: darken($light, 10%) !important;
+}
+
+.form-group {
+  margin-top: .5rem;
+}
+
+label {
+  margin-bottom: .3rem;
+}
+
+.validation-text {
+  color: $danger;
+  margin-top: .5em;
+  font-size: .8rem;
+}
+
+input.ng-touched.ng-invalid,
+select.ng-touched.ng-invalid {
+  border-color: $danger;
+}
